@@ -1,8 +1,15 @@
 {
-  "name": "challenge-01",
-  "version": "1.0.0",
+  "name": "nodejs-unit-tests-challenge",
+  "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
+  "author": {
+    "name": "Matheus Felipe Zanin",
+    "email": "matt_z6@hotmail.com",
+    "url": "https://github.com/mattz6"
+  },
+  "repository": "https://github.com/mattz6/nodejs-unit-tests-challenge",
+  "bugs": "https://github.com/mattz6/nodejs-unit-tests-challenge/issues",
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn ./src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
