@@ -1,7 +1,7 @@
 {
   "name": "nodejs-unit-tests-challenge",
   "description": "🔥 Código de resolução do desafio Testes Unitários, da trilha de NodeJS — Ignite",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "author": {
