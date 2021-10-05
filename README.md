@@ -1,8 +1,6 @@
 <div align="center">
   <h1>
     ⚔ Desafios — Ignite 🔥
-    <br/><br/>
-    Testes unitários
   </h1>
 
   > Repositório com o código de resolução dos desafios **Testes unitários** & **Testes de integração**, da trilha de NodeJS do bootcamp Ignite da Rocketseat.
