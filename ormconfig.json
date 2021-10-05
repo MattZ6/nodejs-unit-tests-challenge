@@ -1,8 +1,7 @@
 {
-  "username": "postgres",
-  "password": "docker",
+  "username": "docker",
+  "password": "rentx",
 
-  "name": "default",
   "type": "postgres",
   "host": "localhost",
   "port": 5432,
