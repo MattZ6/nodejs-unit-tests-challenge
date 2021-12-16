@@ -3,7 +3,7 @@
     ⚔ Desafios — Ignite 🔥
   </h1>
 
-  > Repositório com o código de resolução dos desafios **Testes unitários** & **Testes de integração**, da trilha de NodeJS do bootcamp Ignite da Rocketseat.
+  > Repositório com o código de resolução dos desafios **Testes unitários**, **Testes de integração** e **Transferências**, da trilha de NodeJS do bootcamp Ignite da Rocketseat.
 </div>
 
 ## 🎉 Começando
