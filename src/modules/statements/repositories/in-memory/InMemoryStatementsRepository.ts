@@ -1,4 +1,4 @@
-import { Statement } from "../../entities/Statement";
+import { OperationType, Statement } from "../../entities/Statement";
 import { ICreateStatementDTO } from "../../useCases/createStatement/ICreateStatementDTO";
 import { IGetBalanceDTO } from "../../useCases/getBalance/IGetBalanceDTO";
 import { IGetStatementOperationDTO } from "../../useCases/getStatementOperation/IGetStatementOperationDTO";
@@ -20,7 +20,7 @@ export class InMemoryStatementsRepository implements IStatementsRepository {
   async findStatementOperation({ statement_id, user_id }: IGetStatementOperationDTO): Promise<Statement | undefined> {
     return this.statements.find(operation => (
       operation.id === statement_id &&
-      operation.user_id === user_id
+      (operation.user_id === user_id || operation.sender_id === user_id)
     ));
   }
 
@@ -32,11 +32,25 @@ export class InMemoryStatementsRepository implements IStatementsRepository {
     const statement = this.statements.filter(operation => operation.user_id === user_id);
 
     const balance = statement.reduce((acc, operation) => {
-      if (operation.type === 'deposit') {
+      if (operation.type === OperationType.DEPOSIT) {
         return acc + operation.amount;
-      } else {
+      }
+
+      if (operation.type === OperationType.WITHDRAW) {
         return acc - operation.amount;
       }
+
+      if (operation.type === OperationType.TRANSFER) {
+        if (operation.sender_id === user_id) {
+          return acc - operation.amount;
+        }
+
+        if (operation.user_id === user_id) {
+          return acc + operation.amount;
+        }
+      }
+
+      return acc;
     }, 0)
 
     if (with_statement) {
