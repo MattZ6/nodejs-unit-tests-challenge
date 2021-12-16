@@ -15,12 +15,14 @@ export class StatementsRepository implements IStatementsRepository {
 
   async create({
     user_id,
+    sender_id,
     amount,
     description,
     type
   }: ICreateStatementDTO): Promise<Statement> {
     const statement = this.repository.create({
       user_id,
+      sender_id,
       amount,
       description,
       type
