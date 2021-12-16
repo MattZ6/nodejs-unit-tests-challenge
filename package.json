@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn ./src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
-    "test": "cross-env NODE_ENV=test jest -i"
+    "test": "cross-env NODE_ENV=test jest -i --detectOpenHandles"
   },
   "dependencies": {
     "bcryptjs": "2.4.3",
