@@ -11,7 +11,7 @@ import createConnection from './database';
 
 const app = express();
 
-createConnection();
+createConnection('localhost');
 
 app.use(cors());
 app.use(express.json());
